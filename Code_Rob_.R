@@ -15,7 +15,7 @@ pca<-prcomp(data2, center = FALSE, scale = FALSE)
 variance_PC<-100*pca$sdev^2/sum(pca$sdev^2)
 #Add plotting 
 PCA_scores<-data.frame(pca$x)
-ggplot(PCA_scores[,1:2],aes(x='PC1', y='PC2', shape=class, color=class)) +geom_point()
+ggplot(PCA_scores[,1:2],aes(x=PC1, y=PC2, shape=class, color=class)) +geom_point()
 #COmparing PCA and URF
 Iris.urf <- randomForest(data2)
 crowsD<-nrow(Iris.urf$proximity)
