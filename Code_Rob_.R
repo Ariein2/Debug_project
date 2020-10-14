@@ -5,8 +5,9 @@ library(ROCR)
 library(MASS)
 library(ggplot2)
 #Scaling of the data (iris data with 4 variables and 3 classes)
-scale_iris<-scale(iris[,1:4], center = FALSE, scale = TRUE)
-data2 <- log10(scale_iris[,1:4])
+log_iris <- log10(iris[,1:4])
+data2<-scale(log_iris[,1:4], center = TRUE, scale = TRUE)
+
 class<-iris[,5]
 #PCA analysis
 
